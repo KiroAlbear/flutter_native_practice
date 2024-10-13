@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
         sendMessageToAndroidMethod, {"message": "Hello from Flutter"});
   }
 
-  void _recieveMessageToAndroid() {
+  void _recieveMessageFromAndroid() {
     messagesChannel.invokeMethod(receiveMessageToAndroidMethod).then(
       (dynamic value) {
         Map<Object?, Object?> message = value as Map<Object?, Object?>;
@@ -94,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: _sendMessageToAndroid,
                 child: Text("message to android")),
             ElevatedButton(
-                onPressed: _recieveMessageToAndroid,
+                onPressed: _recieveMessageFromAndroid,
                 child: Text("message from android")),
             ElevatedButton(
                 onPressed: _openAndroidActivity,
